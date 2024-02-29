@@ -1,66 +1,85 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# [ [Questions Project - API Documentation](#) ]
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Connect with the Developer
 
-## About Laravel
+#### Feel free to reach out if you have any questions, suggestions, or just want to connect!
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **LinkedIn:** [Abdullah Omar](https://www.linkedin.com/in/abdullah-omar-81196420a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+- **WhatsApp:** [+01144393582](https://wa.me/01144393582)
+- **Email:** [abdullahomarj1@gmail.com](abdullahomarj1@gmail.com)
+- **Website:** [Eng-AbdullhOmar.online](https://www.eng-abdullahomar.online)
+- **Telegram:** [@abdullahomar_p](https://t.me/abdullahomar_p)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# ``Description Summury``
+#### this is questions app for 'fatwa' , and contains notification and permissions and activities part and crud operations for all models.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# ``Authentication Endpoints``
+### - [Register](#)
+**``URL``**: /auth/register <br>
+**``Method``**: POST <br>
+**``Description``**: Register a new user. <br>
+#### Request Body:
+**``name``**: name <br>
+**``email``**: email <br>
+**``password``**: password <br>
+**``password_confirmation``**: Confirm Password <br>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#### Response:
+Returns a success message if registration is successful. <br>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### - [Login](#)
+**``URL``**: /auth/login <br>
+**``Method``**: POST <br>
+**``Description``**: Authenticate a user and generate an access token. <br>
+#### Request Body:
+**``email``**: User's email <br>
+**``password``**: User's password <br>
+#### Response:
+Returns an access token if authentication is successful. <br>
 
-## Laravel Sponsors
+### - [Logout](#)
+``URL``: /auth/logout <br>
+``Method``: POST <br>
+``Description``: Logout the currently authenticated user. <br>
+``Authorization Header``: Bearer token <br>
+#### Response:
+Returns a success message upon successful logout. <br>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### - [delete-account](#)
+``URL``: /auth/delete-account <br>
+``Method``: POST <br>
+``Description``: Delete the currently authenticated user. <br>
+``Authorization Header``: Bearer token <br>
+#### Response:
+Your account has been successfully deleted. <br>
 
-### Premium Partners
+### - [check-email](#)
+**``URL``**: /auth/check-email <br>
+**``Method``**: POST <br>
+**``Description``**: Send Email By Code To Check Is Real. <br>
+#### Request Body:
+**``email``**: User's email <br>
+#### Response:
+Returns an code token to the email. <br>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### - [password/reset](#)
+**``URL``**: /auth/password/reset <br>
+**``Method``**: POST <br>
+**``Description``**: Send Email By Code To Check Is Real. <br>
+#### Request Body:
+**``email``**: User's email <br>
+**``token``**: Received Token <br>
+**``password``**: Confirmed <br>
+#### Response:
+password reset successfully. <br>
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### - [password/email](#)
+**``URL``**: /auth/password/email <br>
+**``Method``**: POST <br>
+**``Description``**: Send Email To Check Is Real. <br>
+#### Request Body:
+**``email``**: User's email <br>
+#### Response:
+we sent an email with code of 6 numbers to your email. <br>
